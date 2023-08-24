@@ -12,6 +12,8 @@ public class TextPrinter : MonoBehaviour
     private TMP_FontAsset currentFont;
     public AudioClip[] letterChangeSoundList;
     public AudioSource letterAudioSource;
+    public float fontChangeMax = 1f;
+    public float fontChangeMin = 0f;
 
     void Start()
     {
@@ -20,7 +22,7 @@ public class TextPrinter : MonoBehaviour
         textMeshPro = GetComponent<TMPro.TextMeshProUGUI>();
         textMeshPro.text = textMeshPro.text;
         currentFont = textMeshPro.font; // Set the initial font
-        fontChangeTime = Time.time + Random.Range(0f, 1f);
+        fontChangeTime = Time.time + Random.Range(fontChangeMin, fontChangeMax);
     }
 
     void Update()
