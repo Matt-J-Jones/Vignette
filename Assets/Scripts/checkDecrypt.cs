@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class checkDecrypt : MonoBehaviour
 {
@@ -8,13 +9,22 @@ public class checkDecrypt : MonoBehaviour
     public GameObject encryptedMsgWithButton;
     public GameObject decryptedMsg;
 
-    public GameObject decryptionKey;
+    public GameObject playerInventory;
 
-    // Update is called once per frame
-    void Update()
+
+    void Start()
     {
+        
+    }
+    
+    
+    void Update()
+    { 
+        inventoryTracker inventoryScript = playerInventory.GetComponent<inventoryTracker>();
+        int collectedKeys = inventoryScript.collectedKeys;
+
         if (!decryptedMsg.activeSelf){
-            if (!decryptionKey.activeSelf){
+            if (collectedKeys > 0){
                 encryptedMsg.gameObject.SetActive(false);
                 encryptedMsgWithButton.gameObject.SetActive(true);
             }

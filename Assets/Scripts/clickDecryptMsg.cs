@@ -8,6 +8,7 @@ public class clickDecryptMsg : MonoBehaviour
     public playerInTrigger playerInTrigger;
     public GameObject encryptedMessage;
     public GameObject decryptedMessage;
+    public GameObject playerInventory;
 
     
     void Start()
@@ -35,10 +36,14 @@ public class clickDecryptMsg : MonoBehaviour
 
     public void OnMouseDown()
     {
+        inventoryTracker inventoryScript = playerInventory.GetComponent<inventoryTracker>();
+        int collectedKeys = inventoryScript.collectedKeys;
+
         if (canBeClicked)
         {
             encryptedMessage.gameObject.SetActive(false);
             decryptedMessage.gameObject.SetActive(true);
+            inventoryScript.collectedKeys -= 1;
         }
     }
 }

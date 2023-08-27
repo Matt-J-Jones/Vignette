@@ -15,6 +15,8 @@ public class clickToggleSwitch : MonoBehaviour
     public GameObject switchRed;
     public GameObject itemToTurnOn;
 
+    public AudioClip switchSound;
+    public AudioSource switchSource;
     
     void Start()
     {
@@ -47,11 +49,13 @@ public class clickToggleSwitch : MonoBehaviour
         if (canBeClicked)
         {
             if(!switchStatus){
+                switchSource.PlayOneShot(switchSound);
                 switchRed.transform.localPosition = new Vector3(relativePositionRed.x, switchInactive, relativePositionRed.z); 
                 switchGreen.transform.localPosition = new Vector3(relativePositionGreen.x, switchPressed, relativePositionGreen.z); 
                 itemToTurnOn.gameObject.SetActive(true);
                 switchStatus = true;
             } else {
+                switchSource.PlayOneShot(switchSound);
                 switchRed.transform.localPosition = new Vector3(relativePositionRed.x, switchPressed, relativePositionRed.z); 
                 switchGreen.transform.localPosition = new Vector3(relativePositionGreen.x, switchInactive, relativePositionGreen.z); 
                 itemToTurnOn.gameObject.SetActive(false);

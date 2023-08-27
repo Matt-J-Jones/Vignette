@@ -8,10 +8,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LowPolyWaterMaterial2
-  m_Shader: {fileID: 4800000, guid: 16516895e8a79bf49a6562c3c3b84cbf, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ValidKeywords:
   - _EMISSION
+  m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -159,7 +159,7 @@ Material:
     - _RandomSpeed: 0.5
     - _ReflDistort: 0.9267696
     - _RefrDistort: 1.4393286
-    - _Shininess: 5
+    - _Shininess: 10
     - _ShoreTiling: 56.862743
     - _SkyBoxReflection: 0.426
     - _SmoothnessTextureChannel: 0
@@ -180,11 +180,11 @@ Material:
     - WaveSpeed: {r: 1.086165, g: 4.440575, b: 12.105146, a: -3.0206447}
     - _AnimationDirection: {r: 0, g: 0, b: 0, a: 0}
     - _AnimationTiling: {r: 0.04582553, g: 0.0182, b: 0.045714468, a: 0.027129691}
-    - _BaseColor: {r: 0.06634924, g: 0.0754364, b: 0.1981132, a: 1}
+    - _BaseColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _BumpDirection: {r: -40, g: -40, b: -40, a: 60}
     - _BumpMap_ST: {r: 1, g: 1, b: 0, a: 0}
     - _BumpTiling: {r: 0.01, g: 0.01, b: 0.01, a: 0.01}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.26286048, g: 0.29844213, b: 0.31132078, a: 1}
     - _DepthColor: {r: 0.027511697, g: 0.14179105, b: 0.13226777, a: 0.4627451}
     - _DepthColorFade: {r: 0.8880597, g: 0.27834705, b: 0.44463244, a: 0.22352941}
     - _Displacement: {r: 6.6371665, g: 20.353983, b: -1, a: -0.681416}
@@ -215,7 +215,7 @@ Material:
     - _ShoreColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShorePerturbation: {r: 0, g: 0, b: 0, a: 0}
     - _ShoreTiling: {r: 1, g: 1, b: 0.1, a: 0.1}
-    - _SpecColor: {r: 0.19290674, g: 0.36988723, b: 0.4811321, a: 1}
+    - _SpecColor: {r: 0.19215688, g: 0.36862746, b: 0.48235297, a: 1}
     - _SpecularColor: {r: 0.91791046, g: 0.91791046, b: 0.91791046, a: 1}
     - _UnderwaterColor: {r: 0.6950323, g: 0.89552236, b: 0.7502397, a: 1}
     - _WaveOffset: {r: -0, g: -0, b: -0, a: -0}

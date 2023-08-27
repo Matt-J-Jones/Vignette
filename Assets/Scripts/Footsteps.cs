@@ -23,7 +23,7 @@ public class Footsteps : MonoBehaviour
             isPlaying = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && !isPlaying && Time.time >= nextFootstepTime)
+        if (Input.GetKey(KeyCode.W) && !isPlaying && Time.time >= nextFootstepTime)
         {
             // Randomly select a footstep sound
             AudioClip footstepSound = footstepSounds[Random.Range(0, footstepSounds.Length)];

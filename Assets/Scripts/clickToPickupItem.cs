@@ -10,14 +10,14 @@ public class clickToPickupItem : MonoBehaviour
     public GameObject collectableItem;
     public string newPdaMsg = "@";
     public GameObject PDAMessage;
-    private Text textComponent;
+
+    public GameObject playerInventory;
+    public bool isKey;
     
 
     
     void Start()
     {
-        textComponent = PDAMessage.GetComponent<Text>();
-        
         playerInTrigger.OnPlayerEnterTrigger += HandlePlayerEnterTrigger;
         playerInTrigger.OnPlayerExitTrigger += HandlePlayerExitTrigger;
     }
@@ -48,6 +48,11 @@ public class clickToPickupItem : MonoBehaviour
                 textScript.GetComponent<Text>().text = "";
                 textScript.currentCharIndex = 0;
                 textScript.textToPrint = newPdaMsg;
+            }
+
+            if (isKey){
+                inventoryTracker inventoryScript = playerInventory.GetComponent<inventoryTracker>();
+                inventoryScript.collectedKeys += 1;
             }
             
             collectableItem.gameObject.SetActive(false);
