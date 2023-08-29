@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Boat.unity
     guid: 11b36f1e72fb76f4a9410f8bd3f17352
+  - enabled: 1
+    path: Assets/Scenes/Loop.unity
+    guid: c56690665d728a2448432313a71d3058
   m_configObjects: {}

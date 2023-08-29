@@ -17,6 +17,7 @@ public class hidePDA : MonoBehaviour
     void Start()
     {
         relativePosition = PDA.transform.localPosition;
+        if(!PDAOpen){PDA.transform.localPosition = new Vector3(relativePosition.x, PDAClosedY, relativePosition.z);}
     }
 
     // Update is called once per frame
