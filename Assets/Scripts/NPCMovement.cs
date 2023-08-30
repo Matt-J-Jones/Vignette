@@ -12,6 +12,8 @@ public class NPCMovement : MonoBehaviour
     public float pauseDuration = 2.0f;
     private int currentWaypointIndex = 0;
     public Animator Animator;
+  
+
     
     // Start is called before the first frame update
     void Start()
