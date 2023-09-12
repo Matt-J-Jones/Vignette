@@ -8,6 +8,7 @@ public class mouseClickOn : MonoBehaviour
     Ray ray;
     RaycastHit hit;
 
+    public LayerMask layerMaskToIgnore;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +19,14 @@ public class mouseClickOn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (Input.GetMouseButtonDown(0)) // Left mouse button click
+        if (Input.GetMouseButtonDown(0)) // Left mouse button click
         {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit))
+            // Create a layer mask that includes everything except the "Player" layer
+            int layerMask = ~layerMaskToIgnore.value;
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
             {
                 // Check if the hit object has a ClickableItem script attached
                 receiveClick receiveclick = hit.collider.GetComponent<receiveClick>();

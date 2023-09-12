@@ -10,7 +10,7 @@ public class checkDecrypt : MonoBehaviour
     public GameObject decryptedMsg;
 
     public GameObject playerInventory;
-
+    public int currentKeys;
 
     void Start()
     {
@@ -21,10 +21,11 @@ public class checkDecrypt : MonoBehaviour
     void Update()
     { 
         inventoryTracker inventoryScript = playerInventory.GetComponent<inventoryTracker>();
-        int collectedKeys = inventoryScript.collectedKeys;
+        // int collectedKeys = inventoryScript.collectedKeys;
+        currentKeys = inventoryScript.collectedKeys;
 
         if (!decryptedMsg.activeSelf){
-            if (collectedKeys > 0){
+            if (inventoryScript.collectedKeys > 0){
                 encryptedMsg.gameObject.SetActive(false);
                 encryptedMsgWithButton.gameObject.SetActive(true);
             }

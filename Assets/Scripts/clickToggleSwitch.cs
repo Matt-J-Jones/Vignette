@@ -52,13 +52,15 @@ public class clickToggleSwitch : MonoBehaviour
                 switchSource.PlayOneShot(switchSound);
                 switchRed.transform.localPosition = new Vector3(relativePositionRed.x, switchInactive, relativePositionRed.z); 
                 switchGreen.transform.localPosition = new Vector3(relativePositionGreen.x, switchPressed, relativePositionGreen.z); 
-                itemToTurnOn.gameObject.SetActive(true);
+                if(itemToTurnOn.activeSelf){ itemToTurnOn.gameObject.SetActive(false); }
+                else { itemToTurnOn.gameObject.SetActive(true); }
                 switchStatus = true;
             } else {
                 switchSource.PlayOneShot(switchSound);
                 switchRed.transform.localPosition = new Vector3(relativePositionRed.x, switchPressed, relativePositionRed.z); 
                 switchGreen.transform.localPosition = new Vector3(relativePositionGreen.x, switchInactive, relativePositionGreen.z); 
-                itemToTurnOn.gameObject.SetActive(false);
+                if(itemToTurnOn.activeSelf){ itemToTurnOn.gameObject.SetActive(false); }
+                else { itemToTurnOn.gameObject.SetActive(true); }
                 switchStatus = false;
             }
         }

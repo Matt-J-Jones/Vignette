@@ -34,15 +34,18 @@ public class inventoryTracker : MonoBehaviour
         
         int count = 0;
 
-        foreach(GameObject obj in decryptKeys){
+        if(decryptKeys != null){
+            foreach(GameObject obj in decryptKeys){
             if(obj.activeSelf){
                 count += 1;
             }
         }
+        }
+        
         
         activeKeysInScene = count;
         
-        if (radialCracks != null && NMValue < 10){
+        if (radialCracks != null && NMValue < 10 && brokenWindow != null){
             Debug.Log("NM Value: " + NMValue);
             brokenWindow.GetComponent<Renderer>().material = radialCracks[NMValue];
         }

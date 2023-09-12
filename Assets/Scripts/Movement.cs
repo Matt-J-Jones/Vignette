@@ -5,25 +5,43 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float moveDistance = 0.1f;
-    public KeyCode forwardKey = KeyCode.W;
+    public float turnAngle = 15.0f;
+    public bool isTurning;
+    public GameObject microsubModel; 
+    public bool canMove = false;
+    public playerInTrigger playerInTrigger;
 
-    private bool canMove = false;
-
-    void Update()
+    
+    void Start()
     {
-        if (Input.GetKeyDown(forwardKey))
-        {
-            canMove = true;
-        }
-        else if (Input.GetKeyUp(forwardKey))
-        {
-            canMove = false;
-        }
+        playerInTrigger.OnPlayerEnterTrigger += HandlePlayerEnterTrigger;
+        playerInTrigger.OnPlayerExitTrigger += HandlePlayerExitTrigger;
+    }
 
-        if (canMove)
+    private void OnDestroy()
+    {
+        // Unsubscribe from the events to prevent memory leaks
+        playerInTrigger.OnPlayerEnterTrigger -= HandlePlayerEnterTrigger;
+        playerInTrigger.OnPlayerExitTrigger -= HandlePlayerExitTrigger;
+    }
+
+    private void HandlePlayerEnterTrigger()
+    {
+        canMove = true;
+    }
+
+    private void HandlePlayerExitTrigger()
+    {
+        canMove = false;
+    }   
+
+    public void OnMouseDown()
+    {
+        if (canMove && !isTurning)
         {
-            transform.Translate(Vector3.forward * moveDistance);
-            canMove = false;
+            microsubModel.transform.Translate(Vector3.forward * moveDistance);
+        } else if (canMove && isTurning){
+            microsubModel.transform.Rotate(Vector3.up, turnAngle);
         }
     }
 }

@@ -42,6 +42,13 @@ public class Move : MonoBehaviour
             Animator.SetBool("Right", false);
         }
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            Animator.SetBool("Button", true);
+        } else {
+            Animator.SetBool("Button", false);
+        }
+
 
     }
 }
